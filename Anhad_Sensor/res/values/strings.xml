@@ -1,0 +1,16 @@
+<resources>
+
+    <string name="app_name">TestApp</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="edit_message">Enter a Message Botches!</string>
+    <string name="button_send">Submeet</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_display_message">DisplayMessageActivity</string>
+    <string name="box_1">This is Speed</string>
+    <string name="box_2_1">Start</string>
+    <string name="box_2_2">Stop</string>
+    <string name="settings">Settings</string>
+    <string name="exit">Exit</string>
+
+</resources>
