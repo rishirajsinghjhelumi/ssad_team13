@@ -1,0 +1,15 @@
+<resources>
+
+    <string name="app_name">secondapp</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Main</string>
+    <string name="title_activity_userinterface">Userinterface</string>
+    <string name="but1">Send</string>
+    <string name="enter">Enter your name</string>
+    <string name="hey">Hey</string>
+    <string name="large">LargeText</string>
+    <string name="change">Change</string>
+    <string name="title_activity_speed">Speed</string>
+
+</resources>
