@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="app_name">database</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Main</string>
+    <string name="text1">Rishi Raj Singh Jhelumi</string>
+    <string name="but1">Click Me!!!</string>
+    <color name="seagreen">#CC0000</color>
+
+</resources>
