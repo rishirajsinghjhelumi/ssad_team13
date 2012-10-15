@@ -1,0 +1,20 @@
+<resources>
+
+    <string name="app_name">loc</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Main</string>
+    <string name="text1">Distance</string>
+    <string name="pos1">Get Position</string>
+    <string name="cald">Calculate Distance</string>
+	<color name="red">#ff0000</color>
+	<color name="green">#00ff00</color>
+	<color name="blue">#0000ff</color>
+	<color name="glow">#660033</color>
+	<string name="old1">Old Position</string>
+	<string name="new1">New Position</string>
+	<string name="dist1">Distance Travelled</string>
+	<string name="lat">Latitude</string>
+	<string name="lon">Longitude</string>
+	<string name="dist2">Distance</string>
+</resources>
