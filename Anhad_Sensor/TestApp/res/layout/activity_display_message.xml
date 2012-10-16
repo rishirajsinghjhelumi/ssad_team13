@@ -1,0 +1,82 @@
+<!-- <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/hello_world"
+        tools:context=".DisplayMessageActivity" />
+
+</RelativeLayout> -->
+<!-- 
+<RelativeLayout android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match" >
+    
+</RelativeLayout>
+-->
+<LinearLayout android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <TextView android:id="@+id/box1"
+        android:layout_weight="4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="@string/box_1"
+        android:background="#444444"
+        android:textColor="#FFFFFF"
+        android:textSize="50dp"
+        android:gravity="center" />
+    <LinearLayout android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#444444"
+        >
+        
+    <TextView android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:text="@string/box_2_1"
+        android:layout_margin="10dp"
+        android:radius="10dp"
+        
+        android:background="@drawable/btn_green"
+       
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:onClick="buttonStart"
+        android:clickable="true" />
+    <!--
+    <TextView android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:text="@string/box_2_2"
+        android:background="#CC0000"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:onClick="buttonStop"
+        android:clickable="true" />
+     -->
+     
+     <Button android:layout_weight="1"
+         android:soundEffectsEnabled="true"
+         android:radius="10dp"
+         android:layout_margin="10dp"
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:text="@string/box_2_2"
+          
+         android:background="@drawable/btn_red"
+                
+		 android:textColor="#FFFFFF"
+		 android:onClick="buttonStop"
+         />
+        
+    </LinearLayout>
+</LinearLayout>
