@@ -2,8 +2,6 @@ package com.example.testapp;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Random;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -28,9 +26,9 @@ public class DisplayMessageActivity extends Activity implements SensorEventListe
 	private Sensor sensor;
 	private boolean sensorState = false;
 	long currTime = System.currentTimeMillis();
-	private float prevx;// = 0; //event.values[0];
-	private float prevy;// = 0; //event.values[1];
-	private float prevz;// = 0; //event.values[2];
+	private float prevx;
+	private float prevy;
+	private float prevz;
 	private boolean initialise = false;
 	private boolean mplayerinit = false;
 	private SQLiteDatabase database ;
@@ -39,18 +37,14 @@ public class DisplayMessageActivity extends Activity implements SensorEventListe
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_message);
+        
         TextView textview = (TextView) findViewById(R.id.box1);
         String message = "Welcome to the application!";
         textview.setText(message);
         
-        //TextView textview = new TextView(this);
-        //textview.setTextSize(40);
-        //textview.setText(message);
-        //setContentView(textview);
-        /* Get Sensors Working */
-        Log.i("Creation", "entered created function");
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        
         database = this.openOrCreateDatabase("Logs", MODE_PRIVATE, null);
         database.execSQL("CREATE TABLE IF NOT EXISTS " +
                 " SPEED_VIOLATIONS " +
@@ -87,9 +81,6 @@ public class DisplayMessageActivity extends Activity implements SensorEventListe
     }
     public void onSensorChanged(SensorEvent event)
     {
-    	//TextView disp = (TextView)findViewById(R.id.box1);
-    	//disp.setText("WHAT THE FUCK MAN?!");
-    	//Log.w("sensor", "Entered changed sensor loop");
     	long eventTime = System.currentTimeMillis();
     	checkSverve(event, eventTime);
     	if(!initialise)
@@ -98,17 +89,12 @@ public class DisplayMessageActivity extends Activity implements SensorEventListe
     		initialise=true;
     	}
     }
-    
     public void checkSverve(SensorEvent event,long eventTime)
     {
     	
     	long timediff = eventTime-currTime;
-    	if(timediff>50)
+    	if(timediff>100)
     	{
-    		
-	    	
-	    	Log.d("previous Values:", Float.toString(prevx)+" "+Float.toString(prevy)+" "+Float.toString(prevz));
-	    	
 	    	if(sensorState == true)
 	    	{
 		    	float[] values = event.values;
@@ -117,11 +103,6 @@ public class DisplayMessageActivity extends Activity implements SensorEventListe
 		    	float z = values[2];
 		    	
 		    	TextView disp = (TextView)findViewById(R.id.box1);
-		    	
-		    	/*String accValues = "x: "+Float.toString(x)+"\n"+
-		    			"y: "+Float.toString(y)+"\n"+
-		    			"z: "+Float.toString(z)+"\n";
-		    	disp.setText(accValues);*/
 		    	
 		    	float diffX = x - prevx;
 		    	float diffY = y - prevy;
@@ -141,6 +122,7 @@ public class DisplayMessageActivity extends Activity implements SensorEventListe
 		    		disp.setText("VIOLATION!!!");
 		    		disp.setTextColor(Color.rgb(255, 255, 255));
 		    		sensorState = false;
+		    		
 		    		mplayer = MediaPlayer.create(this,R.raw.sound1);
 		            mplayer.start();
 		            mplayerinit = true;
@@ -158,10 +140,8 @@ public class DisplayMessageActivity extends Activity implements SensorEventListe
 		    	prevz = z;
 		    	
 		    }
-    	
     	currTime=System.currentTimeMillis();
     	return;
-    	
     	}
     }
 
@@ -175,7 +155,9 @@ public class DisplayMessageActivity extends Activity implements SensorEventListe
     	mainbox.setText("Started !");
     	mainbox.setTextColor(Color.rgb(99, 132, 00));
     	sensorState = true;
-    	if(mplayerinit==true)mplayer.stop();
+    	
+    	if(mplayerinit==true)
+    		mplayer.stop();
     	
     }
     
@@ -183,7 +165,9 @@ public class DisplayMessageActivity extends Activity implements SensorEventListe
     {
     	TextView mainbox = (TextView) findViewById(R.id.box1);
     	mainbox.setText("Stopped !");
-    	if(mplayerinit==true)mplayer.stop();
+    	
+    	if(mplayerinit==true)
+    		mplayer.stop();
     	
     	mainbox.setTextColor(Color.rgb(255, 44, 44));
     	sensorState = false;
@@ -193,19 +177,14 @@ public class DisplayMessageActivity extends Activity implements SensorEventListe
     @Override
     protected void onResume() {
       super.onResume();
-      // register this class as a listener for the orientation and
-      // accelerometer sensors
       sensorManager.registerListener(this,
           sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
           SensorManager.SENSOR_DELAY_NORMAL);
     }
-
     @Override
     protected void onPause() {
-      // unregister listener
       super.onPause();
       sensorManager.unregisterListener(this);
     }
     
-
 }

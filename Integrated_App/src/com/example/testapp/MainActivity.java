@@ -13,7 +13,6 @@ import android.view.View;
 
 
 public class MainActivity extends Activity {
-	//public static String EX = "ThisIsKey";
 	private boolean isGPSEnabled;
 	private NetworkInfo networkInfo;
 	
@@ -32,34 +31,25 @@ public class MainActivity extends Activity {
         database.execSQL("CREATE TABLE IF NOT EXISTS " +
                 " SPEED_VIOLATIONS " +
                 " (DATE VARCHAR, TIME VARCHAR," +
-                " VIOLATION_TYPE VARCHAR );");
-              
+                " VIOLATION_TYPE VARCHAR );");         
     }
-
     public void sendMessage(View view)
-    {
-    	       
-        if(isGPSEnabled && networkInfo.isConnected() && networkInfo!=null)
+    {   	       
+        if(isGPSEnabled && networkInfo!=null && networkInfo.isConnected())
         {
         	Intent intent = new Intent (MainActivity.this, AskScreen.class);
         	startActivity(intent);
         }
         else
         {
-        	Intent altintent = new Intent(MainActivity.this,Gps.class);
-        	//Intent altintent = new Intent (MainActivity.this, AskScreen.class);
+        	//Intent altintent = new Intent(MainActivity.this,Gps.class);
+        	Intent altintent = new Intent(MainActivity.this,AskScreen.class);
         	startActivity(altintent);
         }
-        
-    	
     }
-    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_main, menu);
         return true;
     }
-
 }
-
-/**/

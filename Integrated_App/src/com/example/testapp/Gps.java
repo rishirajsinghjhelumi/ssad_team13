@@ -9,7 +9,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -18,52 +17,9 @@ import android.widget.TextView;
 public class Gps extends Activity {
 	
 	private LocationManager locman;
-	private boolean isGPSEnabled=false;
+	private boolean isGPSEnabled;
 	private NetworkInfo networkInfo;
 	private ConnectivityManager conman;
-	private boolean isNetworkEnabled=false;
-	
-	/*
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		check
-		setContentView(R.layout.activity_gps);
-	}
-	
-	public void redirectGps(View view)
-	{
-		Intent intent = new Intent(Intent.ACTION_MAIN);
-		intent.setClassName("com.android.settings","com.android.settings.SecuritySettings");
-		startActivity(intent);
-	}
-	
-	public void redirectNetwork(View view)
-	{
-		Intent intent2 = new Intent(Intent.ACTION_MAIN);
-		intent2.setClassName("com.android.phone", "com.android.phone.Settings");
-		startActivity(intent2);
-	}
-	
-	public void check()
-	{
-		locman=(LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
-        isGPSEnabled = locman.isProviderEnabled(LocationManager.GPS_PROVIDER);
-        
-        conman = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-        networkInfo = conman.getActiveNetworkInfo();
-        
-        if(networkInfo!=null)
-        {
-        	isNetworkEnabled = networkInfo.isConnected();
-        }
-        else
-        {
-        	isNetworkEnabled = false;
-        }
-        }
-	}
-*/
 	final Context context = this;
 	@Override
 	public void onResume()
@@ -149,7 +105,6 @@ public class Gps extends Activity {
 		}
 		if(isGPSEnabled && networkInfo!=null && networkInfo.isConnected() )
 		{
-			Log.i("sensorIFCHECK", "GOING inside IF");
 			Intent intentnext = new Intent(Gps.this,AskScreen.class);
 			startActivity(intentnext);
 		}

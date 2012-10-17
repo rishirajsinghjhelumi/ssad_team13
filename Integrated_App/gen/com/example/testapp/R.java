@@ -16,19 +16,21 @@ public final class R {
     }
     public static final class drawable {
         public static final int appicon=0x7f020000;
-        public static final int btn_green=0x7f020001;
-        public static final int btn_red=0x7f020002;
-        public static final int ic_action_search=0x7f020003;
-        public static final int ic_launcher=0x7f020004;
-        public static final int ic_menu_agenda=0x7f020005;
-        public static final int ic_menu_close_clear_cancel22=0x7f020006;
-        public static final int ic_menu_close_clear_cancel23=0x7f020007;
-        public static final int ic_menu_close_clear_cancel4=0x7f020008;
-        public static final int ic_menu_info_details22=0x7f020009;
-        public static final int ic_menu_info_details23=0x7f02000a;
-        public static final int ic_menu_info_details4=0x7f02000b;
-        public static final int ic_menu_preferences23=0x7f02000c;
-        public static final int ic_menu_preferences4=0x7f02000d;
+        public static final int bgtexture=0x7f020001;
+        public static final int btn_green=0x7f020002;
+        public static final int btn_red=0x7f020003;
+        public static final int ic_action_search=0x7f020004;
+        public static final int ic_launcher=0x7f020005;
+        public static final int ic_menu_agenda=0x7f020006;
+        public static final int ic_menu_close_clear_cancel22=0x7f020007;
+        public static final int ic_menu_close_clear_cancel23=0x7f020008;
+        public static final int ic_menu_close_clear_cancel4=0x7f020009;
+        public static final int ic_menu_info_details22=0x7f02000a;
+        public static final int ic_menu_info_details23=0x7f02000b;
+        public static final int ic_menu_info_details4=0x7f02000c;
+        public static final int ic_menu_preferences23=0x7f02000d;
+        public static final int ic_menu_preferences4=0x7f02000e;
+        public static final int load2=0x7f02000f;
     }
     public static final class id {
         public static final int Exit=0x7f090009;

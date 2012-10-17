@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:background="#444444" >
+    android:background="@drawable/bgtexture" >
 
     <TextView
         android:layout_weight="2"

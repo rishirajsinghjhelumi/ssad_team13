@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#444444" >
+    android:background="@drawable/bgtexture" >
     
     <TextView 
         android:text="@string/ask_user_main"

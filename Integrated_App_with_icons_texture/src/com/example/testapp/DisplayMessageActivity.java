@@ -11,6 +11,9 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
@@ -32,6 +35,8 @@ public class DisplayMessageActivity extends Activity implements SensorEventListe
 	private boolean initialise = false;
 	private boolean mplayerinit = false;
 	private SQLiteDatabase database ;
+	private long ptime;
+	private Location plocation = new Location("ploc");
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,6 +55,62 @@ public class DisplayMessageActivity extends Activity implements SensorEventListe
                 " SPEED_VIOLATIONS " +
                 " (DATE VARCHAR, TIME VARCHAR," +
                 " VIOLATION_TYPE VARCHAR );");
+        
+        
+        LocationManager lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE); 
+        Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        LocationListener locationListener = new LocationListener() {
+        	@Override
+        	public void onStatusChanged(String provider, int status, Bundle extras) {	
+			}
+			@Override
+			public void onProviderEnabled(String provider) {
+			}
+			@Override
+			public void onProviderDisabled(String provider) {
+			}
+			@Override
+			public void onLocationChanged(Location location) {
+				double longitude = location.getLongitude();
+		        double latitude = location.getLatitude();
+		        long time = System.currentTimeMillis();
+		        long timediff = time - ptime;
+		        long one_second_gap = 1000;
+		        if(timediff > one_second_gap)
+		        {
+			        double distance = location.distanceTo(plocation);
+			        long time_interval = timediff / 1000;
+			        double speed = distance/time_interval;
+			        String text = "Speed: " + speed;
+			        TextView disp = (TextView)findViewById(R.id.box0);
+			        disp.setText(text);
+			        double allowed_speed_limit = 65.0;
+			        if( speed > allowed_speed_limit )
+			        {
+			        	TextView tv = (TextView)findViewById(R.id.box1);
+			    		tv.setText("VIOLATION!!!");
+			    		
+			    		mplayer = MediaPlayer.create(DisplayMessageActivity.this,R.raw.sound1);
+			            mplayer.start();
+			            mplayerinit = true;
+			            
+			            SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+					    String date = sdf.format(new Date());
+					    sdf = new SimpleDateFormat("HH:mm:ss");
+					    String timer = sdf.format(new Date());
+						database.execSQL("INSERT INTO " +
+		                        " SPEED_VIOLATIONS " + " Values(" + "'" + date + "','" + timer + 
+		                        "'," +" 'Over Speeding.'" + ");");
+			        }
+		        }
+		        plocation.setLatitude(latitude);
+		        plocation.setLongitude(longitude);
+		        ptime = time;
+			}
+		};
+		lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 10, locationListener);
+		
+		
        
     }
     @Override
@@ -104,20 +165,21 @@ public class DisplayMessageActivity extends Activity implements SensorEventListe
 		    	
 		    	TextView disp = (TextView)findViewById(R.id.box1);
 		    	
-		    	float diffX = x - prevx;
-		    	float diffY = y - prevy;
-		    	float diffZ = z - prevz;
+		    	float diffX = Math.abs(x - prevx);
+		    	float diffY = Math.abs(y - prevy);
+		    	float diffZ = Math.abs(z - prevz);
 		    	
-		    	String strx = (Float.toString(diffX)).substring(0, 3);
+		    	String strx = Float.toString(diffX).substring(0, 3);
 		    	String stry = Float.toString(diffY).substring(0, 3);
 		    	String strz = Float.toString(diffZ).substring(0, 3);
 		    	
-		    	String accValues = "x: "+strx+"\n"+
-		    			"y: "+stry+"\n"+
-		    			"z: "+strz+"\n";
+		    	String accValues = 
+		    			"X: "+ strx + "\n"+
+		    			"Y: "+ stry + "\n"+
+		    			"Z: "+ strz + "\n";
 		    	disp.setText(accValues);
 		    	
-		    	if(Math.abs(diffX) > 4.0 || Math.abs(diffY) > 4.0 || Math.abs(diffZ) > 4.0)
+		    	if(diffX > 4.0 || diffY > 4.0 || diffZ> 4.0)
 		    	{
 		    		disp.setText("VIOLATION!!!");
 		    		disp.setTextColor(Color.rgb(255, 255, 255));
@@ -138,7 +200,6 @@ public class DisplayMessageActivity extends Activity implements SensorEventListe
 		    	prevx = x;
 		    	prevy = y;
 		    	prevz = z;
-		    	
 		    }
     	currTime=System.currentTimeMillis();
     	return;
@@ -165,7 +226,6 @@ public class DisplayMessageActivity extends Activity implements SensorEventListe
     {
     	TextView mainbox = (TextView) findViewById(R.id.box1);
     	mainbox.setText("Stopped !");
-    	
     	if(mplayerinit==true)
     		mplayer.stop();
     	

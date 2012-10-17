@@ -31,19 +31,28 @@ public final class R {
         public static final int ic_menu_preferences23=0x7f02000d;
         public static final int ic_menu_preferences4=0x7f02000e;
         public static final int load2=0x7f02000f;
+        public static final int rim1=0x7f020010;
+        public static final int rim2=0x7f020011;
+        public static final int rim3=0x7f020012;
+        public static final int rim4=0x7f020013;
+        public static final int rim5=0x7f020014;
+        public static final int rim6=0x7f020015;
+        public static final int rim7=0x7f020016;
+        public static final int violation1=0x7f020017;
     }
     public static final class id {
-        public static final int Exit=0x7f090009;
-        public static final int Settings=0x7f090008;
-        public static final int ViolationLog=0x7f09000a;
-        public static final int appName=0x7f090005;
-        public static final int box1=0x7f090000;
-        public static final int button1=0x7f090003;
-        public static final int button2=0x7f090004;
-        public static final int listView1=0x7f090006;
-        public static final int menu_settings=0x7f090007;
-        public static final int textView3=0x7f090002;
-        public static final int textView4=0x7f090001;
+        public static final int Exit=0x7f09000a;
+        public static final int Settings=0x7f090009;
+        public static final int ViolationLog=0x7f09000b;
+        public static final int appName=0x7f090006;
+        public static final int box0=0x7f090000;
+        public static final int box1=0x7f090001;
+        public static final int button1=0x7f090004;
+        public static final int button2=0x7f090005;
+        public static final int listView1=0x7f090007;
+        public static final int menu_settings=0x7f090008;
+        public static final int textView3=0x7f090003;
+        public static final int textView4=0x7f090002;
     }
     public static final class layout {
         public static final int activity_ask2=0x7f030000;

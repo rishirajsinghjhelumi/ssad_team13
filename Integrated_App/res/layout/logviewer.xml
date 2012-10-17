@@ -9,7 +9,7 @@
         android:id="@+id/listView1"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:background="#444444" >
+        android:background="@drawable/bgtexture" >
     </ListView>
 
 </LinearLayout>
