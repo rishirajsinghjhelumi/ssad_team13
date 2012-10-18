@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bgtexture" >
+    
+    <TextView 
+        android:text="@string/ask_user_main"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:layout_weight="3"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:gravity="center"/>
+    <LinearLayout android:layout_weight="1"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+        
+        <TextView android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:text="@string/yes"
+        android:layout_margin="10dp"
+        android:radius="10dp"
+        android:background="@drawable/btn_green"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:onClick="userReturn"
+        android:clickable="true" />
+        
+        
+        <Button android:layout_weight="1"
+         android:soundEffectsEnabled="true"
+         android:radius="10dp"
+         android:layout_margin="10dp"
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:text="@string/no"
+         android:background="@drawable/btn_red"
+         android:textColor="#FFFFFF"
+		 android:onClick="userReturn"
+         />
+        
+        
+    </LinearLayout>
+    <CheckBox
+        android:layout_weight="1"
+        android:text="@string/ask_user_setDefault"
+        android:checked="false"
+        android:onClick="setEverytime"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:textColor="#FFFFFF"
+        />
+    
+
+</LinearLayout>
