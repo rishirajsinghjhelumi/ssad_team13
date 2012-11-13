@@ -1,0 +1,36 @@
+<resources>
+
+    <string name="app_name">Ride Safe</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">RideSafe</string>
+    <string name="App_Name">Ride Safe</string>
+    <string name="button_send">Submeet</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_display_message">DisplayMessageActivity</string>
+    <string name="box_1">This is Speed</string>
+    <string name="box_2_1">Start</string>
+    <string name="box_2_2">Stop</string>
+    <string name="settings">Settings</string>
+    <string name="exit">Exit</string>
+    <string name="title_activity_ask_screen">AskScreen</string>
+    <string name="ask_user_main">Do you wish to Calibrate sensors Now?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="ask_user_setDefault">Do this everytime at Start-Up.</string>
+    <string name="vlog">View Violations</string>
+    <string name="title_activity_gps">Gps</string>
+    <string name="but1">Send</string>
+    <string name="enter">Enter your name</string>
+    <string name="hey">Hey</string>
+    <string name="loc">Network</string>
+    <string name="gps">GPS</string>
+    <string name="change">Enable</string>
+    <string name="title_activity_speed">Speed</string>
+
+    <color name="seagreen">#66FFCC</color>
+    <color name="redbrown">#CC0000</color>
+
+    <string name="vlogname">Violations Log</string>
+    <string name="title_activity_settings">Settings</string>
+
+</resources>
