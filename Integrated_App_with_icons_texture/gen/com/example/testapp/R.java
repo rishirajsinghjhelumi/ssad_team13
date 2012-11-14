@@ -60,13 +60,15 @@ public final class R {
         public static final int activity_display_message=0x7f030002;
         public static final int activity_gps=0x7f030003;
         public static final int activity_main=0x7f030004;
-        public static final int logviewer=0x7f030005;
+        public static final int activity_settings=0x7f030005;
+        public static final int logviewer=0x7f030006;
     }
     public static final class menu {
         public static final int activity_ask_screen=0x7f080000;
         public static final int activity_display_message=0x7f080001;
         public static final int activity_gps=0x7f080002;
         public static final int activity_main=0x7f080003;
+        public static final int activity_settings=0x7f080004;
     }
     public static final class raw {
         public static final int sound1=0x7f040000;
@@ -96,6 +98,7 @@ public final class R {
         public static final int title_activity_display_message=0x7f050006;
         public static final int title_activity_gps=0x7f050012;
         public static final int title_activity_main=0x7f050002;
+        public static final int title_activity_settings=0x7f05001b;
         public static final int title_activity_speed=0x7f050019;
         public static final int vlog=0x7f050011;
         public static final int vlogname=0x7f05001a;

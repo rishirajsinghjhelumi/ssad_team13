@@ -124,6 +124,14 @@ public class DisplayMessageActivity extends Activity implements SensorEventListe
     		Intent vlogintent = new Intent(DisplayMessageActivity.this, ViewLog.class);
     		startActivity(vlogintent);
     		break;
+    	case R.id.Exit:
+    		MainActivity.isQuit = true;
+    		finish();
+    		break;
+    	case R.id.Settings:
+    		Intent settings_intent = new Intent(DisplayMessageActivity.this, Settings.class);
+    		startActivity(settings_intent);
+    		break;
     		
     	}
     	return true;

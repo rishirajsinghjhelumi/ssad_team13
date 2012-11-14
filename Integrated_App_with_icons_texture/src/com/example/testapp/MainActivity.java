@@ -13,6 +13,7 @@ import android.view.View;
 
 
 public class MainActivity extends Activity {
+	public static boolean isQuit = false;
 	private boolean isGPSEnabled;
 	private NetworkInfo networkInfo;
 	
@@ -48,8 +49,10 @@ public class MainActivity extends Activity {
         }
     }
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_main, menu);
-        return true;
-    }
+    protected void onRestart() {
+       // TODO Auto-generated method stub
+       super.onRestart();
+      if(MainActivity.isQuit)
+          finish();
+  }
 }

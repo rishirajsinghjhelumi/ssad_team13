@@ -32,4 +32,11 @@ public class ViewLog extends Activity {
 				android.R.layout.simple_list_item_1, results);
 		listView1.setAdapter(adapter);
 	}
+    @Override
+    protected void onRestart() {
+       // TODO Auto-generated method stub
+       super.onRestart();
+      if(MainActivity.isQuit)
+          finish();
+  }
 }
