@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.4"
+        android:contentDescription="Application Icon"
+        android:gravity="center"
+        android:onClick="sendMessage"
+        android:src="@drawable/helmet" />
+    
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.24"
+        android:gravity="center"
+        android:onClick="sendMessage"
+        android:text="@string/txt1"
+        android:textColor="#000000"
+        android:textSize="40dp" />
+
+</LinearLayout>
