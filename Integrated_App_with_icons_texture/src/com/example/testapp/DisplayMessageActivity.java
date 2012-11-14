@@ -179,7 +179,7 @@ public class DisplayMessageActivity extends Activity implements SensorEventListe
 		    			"Z: "+ strz + "\n";
 		    	disp.setText(accValues);
 		    	
-		    	if(diffX > 4.0 || diffY > 4.0 || diffZ> 4.0)
+		    	if(diffX > 4.0 || diffY > 4.0 || diffZ > 4.0)
 		    	{
 		    		disp.setText("VIOLATION!!!");
 		    		disp.setTextColor(Color.rgb(255, 255, 255));
