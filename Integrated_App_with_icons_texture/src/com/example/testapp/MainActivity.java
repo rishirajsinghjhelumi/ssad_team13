@@ -42,8 +42,8 @@ public class MainActivity extends Activity {
         }
         else
         {
-        	Intent altintent = new Intent(MainActivity.this,Gps.class);
-        //	Intent altintent = new Intent(MainActivity.this,AskScreen.class);
+        	//Intent altintent = new Intent(MainActivity.this,Gps.class);
+        	Intent altintent = new Intent(MainActivity.this,AskScreen.class);
         	startActivity(altintent);
         }
     }
