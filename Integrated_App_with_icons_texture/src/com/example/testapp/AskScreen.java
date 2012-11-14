@@ -15,12 +15,6 @@ public class AskScreen extends Activity {
         setContentView(R.layout.activity_ask2);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_ask_screen, menu);
-        return true;
-    }
-    
     public void userReturn(View view)
     {
     	Intent intent = new Intent (AskScreen.this,DisplayMessageActivity.class);
@@ -33,4 +27,11 @@ public class AskScreen extends Activity {
     	else
     		calibrateByDefault=true;
     }
+    @Override
+    protected void onRestart() {
+       // TODO Auto-generated method stub
+       super.onRestart();
+      if(MainActivity.isQuit)
+          finish();
+  }
 }

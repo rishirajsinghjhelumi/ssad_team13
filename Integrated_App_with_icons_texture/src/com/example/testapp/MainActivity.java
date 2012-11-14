@@ -13,6 +13,7 @@ import android.view.View;
 
 
 public class MainActivity extends Activity {
+	public static boolean isQuit = false;
 	private boolean isGPSEnabled;
 	private NetworkInfo networkInfo;
 	
@@ -42,14 +43,16 @@ public class MainActivity extends Activity {
         }
         else
         {
-        	Intent altintent = new Intent(MainActivity.this,Gps.class);
-        //	Intent altintent = new Intent(MainActivity.this,AskScreen.class);
+        	//Intent altintent = new Intent(MainActivity.this,Gps.class);
+        	Intent altintent = new Intent(MainActivity.this,AskScreen.class);
         	startActivity(altintent);
         }
     }
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_main, menu);
-        return true;
-    }
+    protected void onRestart() {
+       // TODO Auto-generated method stub
+       super.onRestart();
+      if(MainActivity.isQuit)
+          finish();
+  }
 }

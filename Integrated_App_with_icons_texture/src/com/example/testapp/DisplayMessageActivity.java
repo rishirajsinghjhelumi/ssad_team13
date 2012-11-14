@@ -124,6 +124,14 @@ public class DisplayMessageActivity extends Activity implements SensorEventListe
     		Intent vlogintent = new Intent(DisplayMessageActivity.this, ViewLog.class);
     		startActivity(vlogintent);
     		break;
+    	case R.id.Exit:
+    		MainActivity.isQuit = true;
+    		finish();
+    		break;
+    	case R.id.Settings:
+    		Intent settings_intent = new Intent(DisplayMessageActivity.this, Settings.class);
+    		startActivity(settings_intent);
+    		break;
     		
     	}
     	return true;
@@ -175,7 +183,7 @@ public class DisplayMessageActivity extends Activity implements SensorEventListe
 		    			"Z: "+ strz + "\n";
 		    	disp.setText(accValues);
 		    	
-		    	if(diffX > 4.0 || diffY > 4.0 || diffZ> 4.0)
+		    	if(diffX > 4.0 || diffY > 4.0 || diffZ > 4.0)
 		    	{
 		    		disp.setText("VIOLATION!!!");
 		    		disp.setTextColor(Color.rgb(255, 255, 255));

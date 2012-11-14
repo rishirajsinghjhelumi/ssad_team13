@@ -33,7 +33,6 @@ public class Settings extends Activity {
 		this.calibrate=0;
 		this.weather=0;
 		this.vehicle=1;
-		//database.execSQL("DROP TABLE IF EXISTS SETTINGS ;");
 		database.execSQL("CREATE TABLE IF NOT EXISTS" +
                 " SETTINGS " +
                 " (ID int AUTO_INCREMENT,VEHICLE_TYPE VARCHAR , CALIBRATE_SCREEN int , WEATHER_FETCH int );");
@@ -44,36 +43,20 @@ public class Settings extends Activity {
 		int wea = (int)cursor.getInt(cursor.getColumnIndex("WEATHER_FETCH"));
 		if (wea==1)weather=1;
 		String veh=cursor.getString(cursor.getColumnIndex("VEHICLE_TYPE"));
-		if(veh == v0)vehicle=0;
-		else if(veh == v1)vehicle=1;
-		else if(veh == v2)vehicle=2;
-		/*
-		int num_rows = cursor.getCount();
-		if(num_rows>0)
-		{
-		Cursor cursor2 = database.rawQuery("SELECT * FROM SETTINGS WHERE ID=" +num_rows+";", null);
-		int cal = (int)cursor2.getInt(cursor.getColumnIndex("CALIBRATE_SCREEN"));
-		if (cal==1)calibrate=1;
-		int wea = (int)cursor2.getInt(cursor.getColumnIndex("WEATHER_FETCH"));
-		if (wea==1)weather=1;
-		}
-		*/
-		/*if(cursor !=null){
-			if(cursor.moveToFirst()){
-				do{
-					int cal = (int)cursor.getInt(cursor.getColumnIndex("CALIBRATE_SCREEN"));
-					if (cal==1)calibrate=1;
-					int wea = (int)cursor.getInt(cursor.getColumnIndex("WEATHER_FETCH"));
-					if (wea==1)weather=1;
-				}while(cursor.moveToNext()); 
-			}
-		}*/
+		if(veh == v0)
+			vehicle=0;
+		else if(veh == v1)
+			vehicle=1;
+		else if(veh == v2)
+			vehicle=2;
         Button b = (Button) findViewById(R.id.btnSubmit);
         spinner1 = (Spinner) findViewById(R.id.spinner1);
         spinner1.setSelection(vehicle);
         CheckBox cb = (CheckBox) findViewById(R.id.checkBox1);
-        if(calibrate==1)calibrate2=true;
-        else calibrate2=false;
+        if(calibrate==1)
+        	calibrate2=true;
+        else 
+        	calibrate2=false;
         cb.setChecked(calibrate2);
         cb.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			

@@ -26,9 +26,11 @@
     <string name="gps">GPS</string>
     <string name="change">Enable</string>
     <string name="title_activity_speed">Speed</string>
-	<color name="seagreen">#66FFCC</color>
-	<color name="redbrown">#CC0000</color>
-	<string name="vlogname">Violations Log</string>
-	
+
+    <color name="seagreen">#66FFCC</color>
+    <color name="redbrown">#CC0000</color>
+
+    <string name="vlogname">Violations Log</string>
+    <string name="title_activity_settings">Settings</string>
 
 </resources>

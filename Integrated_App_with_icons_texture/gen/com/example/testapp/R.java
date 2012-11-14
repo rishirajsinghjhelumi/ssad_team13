@@ -17,28 +17,29 @@ public final class R {
     public static final class drawable {
         public static final int appicon=0x7f020000;
         public static final int bgtexture=0x7f020001;
-        public static final int btn_green=0x7f020002;
-        public static final int btn_red=0x7f020003;
-        public static final int ic_action_search=0x7f020004;
-        public static final int ic_launcher=0x7f020005;
-        public static final int ic_menu_agenda=0x7f020006;
-        public static final int ic_menu_close_clear_cancel22=0x7f020007;
-        public static final int ic_menu_close_clear_cancel23=0x7f020008;
-        public static final int ic_menu_close_clear_cancel4=0x7f020009;
-        public static final int ic_menu_info_details22=0x7f02000a;
-        public static final int ic_menu_info_details23=0x7f02000b;
-        public static final int ic_menu_info_details4=0x7f02000c;
-        public static final int ic_menu_preferences23=0x7f02000d;
-        public static final int ic_menu_preferences4=0x7f02000e;
-        public static final int load2=0x7f02000f;
-        public static final int rim1=0x7f020010;
-        public static final int rim2=0x7f020011;
-        public static final int rim3=0x7f020012;
-        public static final int rim4=0x7f020013;
-        public static final int rim5=0x7f020014;
-        public static final int rim6=0x7f020015;
-        public static final int rim7=0x7f020016;
-        public static final int violation1=0x7f020017;
+        public static final int bgtexture2=0x7f020002;
+        public static final int btn_green=0x7f020003;
+        public static final int btn_red=0x7f020004;
+        public static final int ic_action_search=0x7f020005;
+        public static final int ic_launcher=0x7f020006;
+        public static final int ic_menu_agenda=0x7f020007;
+        public static final int ic_menu_close_clear_cancel22=0x7f020008;
+        public static final int ic_menu_close_clear_cancel23=0x7f020009;
+        public static final int ic_menu_close_clear_cancel4=0x7f02000a;
+        public static final int ic_menu_info_details22=0x7f02000b;
+        public static final int ic_menu_info_details23=0x7f02000c;
+        public static final int ic_menu_info_details4=0x7f02000d;
+        public static final int ic_menu_preferences23=0x7f02000e;
+        public static final int ic_menu_preferences4=0x7f02000f;
+        public static final int load2=0x7f020010;
+        public static final int rim1=0x7f020011;
+        public static final int rim2=0x7f020012;
+        public static final int rim3=0x7f020013;
+        public static final int rim4=0x7f020014;
+        public static final int rim5=0x7f020015;
+        public static final int rim6=0x7f020016;
+        public static final int rim7=0x7f020017;
+        public static final int violation1=0x7f020018;
     }
     public static final class id {
         public static final int Exit=0x7f09000a;
@@ -60,13 +61,15 @@ public final class R {
         public static final int activity_display_message=0x7f030002;
         public static final int activity_gps=0x7f030003;
         public static final int activity_main=0x7f030004;
-        public static final int logviewer=0x7f030005;
+        public static final int activity_settings=0x7f030005;
+        public static final int logviewer=0x7f030006;
     }
     public static final class menu {
         public static final int activity_ask_screen=0x7f080000;
         public static final int activity_display_message=0x7f080001;
         public static final int activity_gps=0x7f080002;
         public static final int activity_main=0x7f080003;
+        public static final int activity_settings=0x7f080004;
     }
     public static final class raw {
         public static final int sound1=0x7f040000;
@@ -96,6 +99,7 @@ public final class R {
         public static final int title_activity_display_message=0x7f050006;
         public static final int title_activity_gps=0x7f050012;
         public static final int title_activity_main=0x7f050002;
+        public static final int title_activity_settings=0x7f05001b;
         public static final int title_activity_speed=0x7f050019;
         public static final int vlog=0x7f050011;
         public static final int vlogname=0x7f05001a;
