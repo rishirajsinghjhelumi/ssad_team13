@@ -60,16 +60,12 @@ public class DisplayMessageActivity extends Activity implements SensorEventListe
         LocationManager lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE); 
         Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         LocationListener locationListener = new LocationListener() {
-        	@Override
         	public void onStatusChanged(String provider, int status, Bundle extras) {	
 			}
-			@Override
-			public void onProviderEnabled(String provider) {
+        	public void onProviderEnabled(String provider) {
 			}
-			@Override
 			public void onProviderDisabled(String provider) {
 			}
-			@Override
 			public void onLocationChanged(Location location) {
 				double longitude = location.getLongitude();
 		        double latitude = location.getLatitude();
